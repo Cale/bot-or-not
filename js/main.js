@@ -8,6 +8,7 @@ let answer4;
 let answer5;
 
 let correct = 0;
+let diff;
 
 function calcScore() {
   console.log((correct / 5) * 100 + "%");
@@ -16,9 +17,11 @@ function calcScore() {
 function calcNPSDiff() {
   console.log("Your first NPS was "+nps1+". Your second NPS was "+nps2+".");
   if (nps1 > nps2) {
-    console.log("Your AI favorability has decreased!");
+    diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
+    console.log("Your AI favorability has decreased "+diff+"%!");
   } else if (nps1 < nps2) {
-    console.log("Your AI favorability has increased!");
+    diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
+    console.log("Your AI favorability has increased "+diff+"%!");
   } else {
     console.log("Your AI favorability has remained the same.");
   }
