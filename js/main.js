@@ -13,6 +13,22 @@ function calcScore() {
   console.log((correct / 5) * 100 + "%");
 }
 
+function calcNPSDiff() {
+  console.log("Your first NPS was "+nps1+". Your second NPS was "+nps2+".");
+  if (nps1 > nps2) {
+    console.log("Your AI favorability has decreased!");
+  } else if (nps1 < nps2) {
+    console.log("Your AI favorability has increased!");
+  } else {
+    console.log("Your AI favorability has remained the same.");
+  }
+}
+
+$("#nps1 button").click(function() {
+  nps1 = $(this).text();
+  console.log("nps1: "+nps1);
+});
+
 $("#q1 button").click(function() {
   if ($(this).text() == "True") {
     answer1 = true;
@@ -63,7 +79,13 @@ $("#q5 button").click(function() {
   console.log("q5: "+answer5);
 });
 
+$("#nps2 button").click(function() {
+  nps2 = $(this).text()
+  console.log("nps2: "+nps2);
+});
+
 
 $("#score").click(function() {
   calcScore();
+  calcNPSDiff();
 });
