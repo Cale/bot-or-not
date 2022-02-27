@@ -110,35 +110,82 @@ textarea {
     padding-bottom: 2rem;
   }
 
+  .q p {
+    text-align: center;
+  }
+
+  .q h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    padding-top: 3rem;
+  }
+
   .home-about {
     margin: 0 auto;
     max-width: 50rem;
   }
 
-  #nps1 {
+  #nps1, #q2 {
     background-color: #90fffb;
   }
 
-   .q, .home {
-     display: none;
-   }
+  .q {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+  }
 
-   button {
-     background-color: #fff;
-     border: 2px solid #000;
-     font-size: 2rem;
-     padding: 2rem 3rem 2rem 3rem;
-   }
+  .q, .home, .sources, .answer {
+    display: none;
+  }
 
-   button:hover {
-     background-color: #000;
-     color: #fff;
-     cursor: pointer;
-   }
+  button {
+    background-color: #fff;
+    border: 2px solid #000;
+    font-size: 2rem;
+    margin: 0 .5rem 0 .5rem;
+    padding: 2rem 3rem 2rem 3rem;
+  }
 
-   #start {
+  button:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .buttons {
+    padding: 4rem 0 4rem 0;
+    text-align: center;
+  }
+
+  #start {
     display: block;
     margin: 0 auto;
+  }
+
+  .result {
+    display: none;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .result p {
+    font-size: 35vw;
+  }
+
+  .answer {
+    text-align: center;
+  }
+
+  .img-answer {
+    filter: blur(3px);
+    filter: grayscale(1);
   }
 
 /* ==========================================================================

@@ -27,6 +27,17 @@ function calcNPSDiff() {
   }
 }
 
+function blurImage(answer) {
+  if (answer == "incorrect") {
+    $(".result p").text("Incorrect");
+    $("img").addClass("img-answer");
+  } else {
+    $(".result p").text("Correct");
+  }
+  $(".result").fadeIn();
+  $(".answer").fadeIn();
+}
+
 $( document ).ready(function() {
   $('.home').fadeIn();
 
@@ -34,24 +45,45 @@ $( document ).ready(function() {
     $('.home').fadeOut(function() {
       $('#nps1').fadeIn();
     });
+  });
 
-  })
+  $("#nps1 button").click(function() {
+    nps1 = $(this).text();
+    console.log("nps1: "+nps1);
+    $('#nps1').fadeOut(function() {
+      $('#q1').fadeIn();
+    });
+  });
+
+  $("#q1 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "incorrect"
+    }
+    console.log("q1: "+answer1);
+    $("#q1 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  $("#q1 .next").click(function() {
+    $(".result").fadeOut();
+    $("#q1").fadeOut(function() {
+      $('#q2').fadeIn();
+    });
+  });
+
+
 });
 
-$("#nps1 button").click(function() {
-  nps1 = $(this).text();
-  console.log("nps1: "+nps1);
-});
 
-$("#q1 button").click(function() {
-  if ($(this).text() == "True") {
-    answer1 = true;
-    correct++;
-  } else {
-    answer1 = false;
-  }
-  console.log("q1: "+answer1);
-});
+
+
 
 $("#q2 button").click(function() {
   if ($(this).text() == "True") {
