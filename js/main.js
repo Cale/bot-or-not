@@ -28,11 +28,9 @@ function calcNPSDiff() {
 }
 
 function blurImage(answer) {
-  if (answer == "incorrect") {
-    $(".result p").text("Incorrect");
+  $(".result p").text(answer);
+  if (answer == "Incorrect") {
     $("img").addClass("img-answer");
-  } else {
-    $(".result p").text("Correct");
   }
   $(".result").fadeIn();
   $(".answer").fadeIn();
@@ -59,11 +57,11 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer1 = true;
-      response = "correct";
+      response = "Correct";
       correct++;
     } else {
       answer1 = false;
-      response = "incorrect"
+      response = "Incorrect"
     }
     console.log("q1: "+answer1);
     $("#q1 .buttons").fadeOut(function() {
@@ -71,10 +69,36 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q2 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q2: "+answer1);
+    $("#q2 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
+    $(".answer").fadeOut();
     $("#q1").fadeOut(function() {
       $('#q2').fadeIn();
+    });
+  });
+
+  $("#q2 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q2").fadeOut(function() {
+      $('#q3').fadeIn();
     });
   });
 
@@ -85,15 +109,7 @@ $( document ).ready(function() {
 
 
 
-$("#q2 button").click(function() {
-  if ($(this).text() == "True") {
-    answer2 = true;
-    correct++;
-  } else {
-    answer2 = false;
-  }
-  console.log("q2: "+answer2);
-});
+
 
 $("#q3 button").click(function() {
   if ($(this).text() == "True") {

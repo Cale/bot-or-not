@@ -183,6 +183,10 @@ textarea {
     text-align: center;
   }
 
+  #q2 .answer {
+    margin-top: 31rem;
+  }
+
   .img-answer {
     filter: blur(3px);
     filter: grayscale(1);
