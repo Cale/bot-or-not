@@ -176,7 +176,7 @@ textarea {
   }
 
   .result p {
-    font-size: 35vw;
+    font-size: 21vw;
   }
 
   .answer {
@@ -189,6 +189,14 @@ textarea {
 
   #q3 .answer {
     margin-top: 10rem;
+  }
+
+  #q6 .answer {
+    margin-top: 10rem;
+  }
+
+  #q7 .answer {
+    margin-top: 20rem;
   }
 
   .img-answer {

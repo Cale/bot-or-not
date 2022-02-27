@@ -137,6 +137,54 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q6 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q6: "+answer1);
+    $("#q6 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  $("#q7 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q7: "+answer1);
+    $("#q7 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  $("#q8 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q8: "+answer1);
+    $("#q8 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
   // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
@@ -183,35 +231,34 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q6 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q6").fadeOut(function() {
+      $('#q7').fadeIn();
+      removeImageBlur();
+    });
+  });
 
-});
+  $("#q7 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q7").fadeOut(function() {
+      $('#q8').fadeIn();
+      removeImageBlur();
+    });
+  });
+
+  $("#q8 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q8").fadeOut(function() {
+      $('#q9').fadeIn();
+      removeImageBlur();
+    });
+  });
 
 
-
-
-
-
-
-
-
-$("#q4 button").click(function() {
-  if ($(this).text() == "True") {
-    answer4 = true;
-    correct++;
-  } else {
-    answer4 = false;
-  }
-  console.log("q4: "+answer4);
-});
-
-$("#q5 button").click(function() {
-  if ($(this).text() == "True") {
-    answer5 = true;
-    correct++;
-  } else {
-    answer5 = false;
-  }
-  console.log("q5: "+answer5);
 });
 
 $("#nps2 button").click(function() {
