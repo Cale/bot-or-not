@@ -87,13 +87,59 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+  body {
+    background-color: #ffe790;
+    font-family: 'DotGothic16', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+
+  .home-about {
+    margin: 0 auto;
+    max-width: 50rem;
+  }
+
+  #nps1 {
+    background-color: #90fffb;
+  }
+
    .q, .home {
      display: none;
    }
 
    button {
+     background-color: #fff;
      border: 2px solid #000;
+     font-size: 2rem;
+     padding: 2rem 3rem 2rem 3rem;
    }
+
+   button:hover {
+     background-color: #000;
+     color: #fff;
+     cursor: pointer;
+   }
+
+   #start {
+    display: block;
+    margin: 0 auto;
+  }
 
 /* ==========================================================================
    Helper classes
