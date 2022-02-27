@@ -125,7 +125,7 @@ textarea {
     max-width: 50rem;
   }
 
-  #nps1, #q2 {
+  #nps1, #q2, #q4, #q6, #q8, #q10 {
     background-color: #90fffb;
   }
 
@@ -136,7 +136,7 @@ textarea {
     bottom: 0;
   }
 
-  .q, .home, .sources, .answer {
+  .q, .home, .sources, .answer, .score {
     display: none;
   }
 
@@ -196,6 +196,10 @@ textarea {
   }
 
   #q7 .answer {
+    margin-top: 20rem;
+  }
+
+  #q9 .answer {
     margin-top: 20rem;
   }
 

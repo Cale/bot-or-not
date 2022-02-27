@@ -11,20 +11,28 @@ let correct = 0;
 let diff;
 
 function calcScore() {
-  console.log((correct / 5) * 100 + "%");
+  var score = (correct / 10) * 100 + "%"
+  console.log((correct / 10) * 100 + "%");
+  return score;
 }
 
 function calcNPSDiff() {
+  var response;
+  response = "Your first NPS was "+nps1+". Your second NPS was "+nps2+"."
   console.log("Your first NPS was "+nps1+". Your second NPS was "+nps2+".");
   if (nps1 > nps2) {
     diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
     console.log("Your AI favorability has decreased "+diff+"%!");
+    response = response + " Your AI favorability has decreased "+diff+"%!"
   } else if (nps1 < nps2) {
     diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
     console.log("Your AI favorability has increased "+diff+"%!");
+    response = response + " Your AI favorability has increased "+diff+"%!"
   } else {
     console.log("Your AI favorability has remained the same.");
+    response = response + "Your AI favorability has remained the same."
   }
+  return response;
 }
 
 function blurImage(answer) {
@@ -201,6 +209,32 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q10 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q10: "+answer1);
+    $("#q10 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  $("#nps2 button").click(function() {
+    nps2 = $(this).text();
+    console.log("nps2: "+nps2);
+    $('#nps2').fadeOut(function() {
+      $('.score p').text(calcScore());
+      $('.score .favorability').text(calcNPSDiff());
+      $('.score').fadeIn();
+    });
+  });
+
   // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
@@ -283,16 +317,13 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q10 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q10").fadeOut(function() {
+      $('#nps2').fadeIn();
+      removeImageBlur();
+    });
+  });
 
-});
-
-$("#nps2 button").click(function() {
-  nps2 = $(this).text()
-  console.log("nps2: "+nps2);
-});
-
-
-$("#score").click(function() {
-  calcScore();
-  calcNPSDiff();
 });
