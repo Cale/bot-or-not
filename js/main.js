@@ -185,6 +185,22 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q9 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q9: "+answer1);
+    $("#q9 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
   // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
@@ -254,6 +270,15 @@ $( document ).ready(function() {
     $(".answer").fadeOut();
     $("#q8").fadeOut(function() {
       $('#q9').fadeIn();
+      removeImageBlur();
+    });
+  });
+
+  $("#q9 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q9").fadeOut(function() {
+      $('#q10').fadeIn();
       removeImageBlur();
     });
   });
