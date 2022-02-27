@@ -105,6 +105,38 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q4 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q4: "+answer1);
+    $("#q4 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
+  $("#q5 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q5: "+answer1);
+    $("#q5 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
   // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
@@ -129,6 +161,24 @@ $( document ).ready(function() {
     $(".answer").fadeOut();
     $("#q3").fadeOut(function() {
       $('#q4').fadeIn();
+      removeImageBlur();
+    });
+  });
+
+  $("#q4 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q4").fadeOut(function() {
+      $('#q5').fadeIn();
+      removeImageBlur();
+    });
+  });
+
+  $("#q5 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q5").fadeOut(function() {
+      $('#q6').fadeIn();
       removeImageBlur();
     });
   });
