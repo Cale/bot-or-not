@@ -36,6 +36,10 @@ function blurImage(answer) {
   $(".answer").fadeIn();
 }
 
+function removeImageBlur() {
+  $("img").removeClass("img-answer");
+}
+
 $( document ).ready(function() {
   $('.home').fadeIn();
 
@@ -85,12 +89,29 @@ $( document ).ready(function() {
     });
   });
 
+  $("#q3 .buttons button").click(function() {
+    var response;
+    if ($(this).attr("answer") == "true") {
+      answer1 = true;
+      response = "Correct";
+      correct++;
+    } else {
+      answer1 = false;
+      response = "Incorrect"
+    }
+    console.log("q3: "+answer1);
+    $("#q3 .buttons").fadeOut(function() {
+      blurImage(response);
+    });
+  });
+
   // Next Buttons
   $("#q1 .next").click(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q1").fadeOut(function() {
       $('#q2').fadeIn();
+      removeImageBlur();
     });
   });
 
@@ -99,6 +120,16 @@ $( document ).ready(function() {
     $(".answer").fadeOut();
     $("#q2").fadeOut(function() {
       $('#q3').fadeIn();
+      removeImageBlur();
+    });
+  });
+
+  $("#q3 .next").click(function() {
+    $(".result").fadeOut();
+    $(".answer").fadeOut();
+    $("#q3").fadeOut(function() {
+      $('#q4').fadeIn();
+      removeImageBlur();
     });
   });
 
@@ -111,15 +142,7 @@ $( document ).ready(function() {
 
 
 
-$("#q3 button").click(function() {
-  if ($(this).text() == "True") {
-    answer3 = true;
-    correct++;
-  } else {
-    answer3 = false;
-  }
-  console.log("q3: "+answer3);
-});
+
 
 $("#q4 button").click(function() {
   if ($(this).text() == "True") {
