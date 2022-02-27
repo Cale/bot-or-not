@@ -27,6 +27,17 @@ function calcNPSDiff() {
   }
 }
 
+$( document ).ready(function() {
+  $('.home').fadeIn();
+
+  $('#start').click(function() {
+    $('.home').fadeOut(function() {
+      $('#nps1').fadeIn();
+    });
+
+  })
+});
+
 $("#nps1 button").click(function() {
   nps1 = $(this).text();
   console.log("nps1: "+nps1);
