@@ -139,6 +139,8 @@ textarea {
 
   .q, .home, .sources, .answer, .score {
     display: none;
+    position: relative;
+    z-index: 1;
   }
 
   button {
@@ -147,10 +149,7 @@ textarea {
     font-size: 2rem;
     margin: 0 .5rem 0 .5rem;
     padding: 2rem 3rem 2rem 3rem;
-  }
-
-  button.orange {
-    border: 2px solid #FF931E;
+    position: relative;
   }
 
   button:hover {
@@ -159,9 +158,49 @@ textarea {
     cursor: pointer;
   }
 
-  button:after {
-    border: 1px solid red;
+  button[text]::after {
+    border: 2px dotted;
+    color: #fff;
+    border-color: #000;
+    content: attr(text);
+    padding: 2rem 3rem 2rem 3rem;
+    position: absolute;
+    margin-left: -96%;
+    white-space: nowrap;
+    z-index: -1;
   }
+
+  button.orange {
+    border: 2px solid #FF931E;
+    color: #FF931E;
+  }
+
+  button.orange:hover {
+    background-color: #FF931E;
+    border-color: #FF931E;
+    color: #fff;
+  }
+
+  button[text].orange::after {
+    border-color: #FF931E;
+  }
+
+  button.blue {
+    border: 2px solid #3FA9F5;
+    color: #3FA9F5;
+  }
+
+  button.blue:hover {
+    background-color: #3FA9F5;
+    border-color: #3FA9F5;
+    color: #fff;
+  }
+
+  button[text].blue::after {
+    border-color: #3FA9F5;
+  }
+
+
 
   .buttons {
     padding: 4rem 0 4rem 0;
