@@ -88,8 +88,8 @@ textarea {
    ========================================================================== */
 
   body {
-    background-color: #ffe790;
-    font-family: 'DotGothic16', sans-serif;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -100,6 +100,7 @@ textarea {
   }
 
   h1 {
+    font-family: 'Syncopate', sans-serif;
     font-size: 5rem;
     margin-bottom: 1rem;
   }
@@ -148,10 +149,18 @@ textarea {
     padding: 2rem 3rem 2rem 3rem;
   }
 
+  button.orange {
+    border: 2px solid #FF931E;
+  }
+
   button:hover {
     background-color: #000;
     color: #fff;
     cursor: pointer;
+  }
+
+  button:after {
+    border: 1px solid red;
   }
 
   .buttons {
