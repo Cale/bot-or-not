@@ -89,7 +89,8 @@ textarea {
 
   body {
     background-color: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: source-code-pro, monospace;
+    font-weight: 400;
     margin: 0;
     padding: 0;
   }
@@ -102,13 +103,15 @@ textarea {
   }
 
   .grid > .column {
-    border: 1px solid red;
     grid-row: 1;
+    min-height: 23rem;
+    z-index: 1;
   }
 
   @media screen and (max-width: 992px){
      .grid {
         display: block;
+        height: auto;
      }
   }
 
@@ -151,6 +154,17 @@ textarea {
     padding-top: 3rem;
   }
 
+  .home h1 {
+    display: none;
+  }
+
+  .home .column.dark-blue {
+    background-image: url('../img/bot-or-not-logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
+
   .home-about {
     margin: 0 auto;
     max-width: 50rem;
@@ -175,12 +189,15 @@ textarea {
   }
 
   button {
-    background-color: #fff;
-    border: 2px solid #000;
-    font-size: 2rem;
+    background-color: #F4E984;
+    border: none;
+    border-radius: 1rem;
+    font-size: 3.4vw;
+    font-weight: 700;
     margin: 0 .5rem 0 .5rem;
-    padding: 2rem 3rem 2rem 3rem;
+    padding: 1.5rem 3rem 1.5rem 3rem;
     position: relative;
+    text-transform: uppercase;
   }
 
   button:hover {
@@ -190,30 +207,27 @@ textarea {
   }
 
   button[text]::after {
-    border: 2px dotted;
+    border-radius: 1rem;
     color: #fff;
-    border-color: #000;
     content: attr(text);
-    padding: 2rem 3rem 2rem 3rem;
+    padding: 1.5rem 3rem 1.5rem 3rem;
     position: absolute;
-    margin-left: -96%;
+    margin-left: -95%;
     white-space: nowrap;
     z-index: -1;
   }
 
-  button.orange {
-    border: 2px solid #FF931E;
-    color: #FF931E;
+  button.yellow {
+    color: #8A398E;
   }
 
-  button.orange:hover {
-    background-color: #FF931E;
-    border-color: #FF931E;
+  button.yellow:hover {
+    background-color: #EDB872;
     color: #fff;
   }
 
-  button[text].orange::after {
-    border-color: #FF931E;
+  button[text].yellow::after {
+    background-color: #EDB872;
   }
 
   button.blue {
