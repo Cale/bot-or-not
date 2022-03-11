@@ -94,7 +94,7 @@ textarea {
     margin: 0;
     padding: 0;
     text-align: center;
-    height: 100vh;
+    height: 100%;
   }
 
   a {
@@ -338,6 +338,12 @@ textarea {
     border: 3px dashed #EDB872;
     display: block;
     font-size: 3.5vw;
+    margin-bottom: 2rem;
+    padding: 3rem;
+  }
+
+  .border {
+    border: 3px dashed #EDB872;
     margin-bottom: 2rem;
     padding: 3rem;
   }
