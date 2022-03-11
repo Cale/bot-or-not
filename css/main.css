@@ -97,6 +97,10 @@ textarea {
     height: 100vh;
   }
 
+  a {
+    color: #3FA9F5;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,7 +110,7 @@ textarea {
 
   .grid > .column {
     grid-row: 1;
-    padding: 6rem 0;
+    padding: 6rem 4rem;
     min-height: 23rem;
     z-index: 1;
   }
@@ -134,18 +138,6 @@ textarea {
     background-size: 10%;
   }
 
-  .q h1 {
-    border-bottom: 5px solid black;
-    display: inline;
-    font-family: 'Syncopate', sans-serif;
-    font-size: 4rem;
-    padding-right: 3rem;
-    position: absolute;
-    text-align: right;
-    top: 0;
-    right: 0;
-  }
-
   p {
     color: #EDB872;
     font-size: 1.5rem;
@@ -165,14 +157,47 @@ textarea {
     color: #8A398E;
   }
 
-  .q p {
-    text-align: center;
+  .q h1 {
+    color: #EDB872;
+    font-size: 3rem;
+    font-weight: normal;
   }
 
   .q h2 {
     font-size: 2rem;
     margin-top: 0;
     padding-top: 3rem;
+  }
+
+  .q {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .q, .home, .sources, .answer, .score {
+    display: none;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .q button, .q button[text]::after {
+    width: 85%;
+    margin: 2rem 0;
+  }
+
+  .q button[text]::after {
+    padding: 1.5rem 3.5rem;
+    top: -1%;
+    left: -4%;
+  }
+
+  .q img {
+    border: 3px dashed #EDB872;
+    padding: 1rem;
+    max-width: 85%;
   }
 
   .home h1 {
@@ -198,21 +223,6 @@ textarea {
 
   #nps1, #q2, #q4, #q6, #q8, #q10 {
     background-color: #fff;
-  }
-
-  .q {
-    position: absolute;
-    padding-top: 3rem;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-  }
-
-  .q, .home, .sources, .answer, .score {
-    display: none;
-    position: relative;
-    height: 100%;
-    z-index: 1;
   }
 
   button {
@@ -245,7 +255,7 @@ textarea {
   }
 
   button.yellow {
-    color: #8A398E;
+    color: #EDB872;
   }
 
   button.yellow:hover {
@@ -255,21 +265,41 @@ textarea {
 
   button[text].yellow::after {
     background-color: #EDB872;
+    color: #EDB872;
   }
 
-  button.blue {
-    border: 2px solid #3FA9F5;
-    color: #3FA9F5;
+  button.yellow.start {
+    color: #8A398E;
   }
 
-  button.blue:hover {
-    background-color: #3FA9F5;
-    border-color: #3FA9F5;
+  button.pink {
+    background-color: #F7A4FC;
+    color: #D872DB;
+  }
+
+  button.pink:hover {
+    background-color: #D872DB;
     color: #fff;
   }
 
-  button[text].blue::after {
-    border-color: #3FA9F5;
+  button[text].pink::after {
+    background-color: #D872DB;
+    color: #D872DB;
+  }
+
+  button.next {
+    background-color: #282C49;
+    color: #4FB1D3;
+  }
+
+  button.next:hover {
+    background-color: #4FB1D3;
+    color: #fff;
+  }
+
+  button[text].next::after {
+    background-color: #4FB1D3;
+    color: #4FB1D3;
   }
 
   .buttons {
@@ -284,41 +314,15 @@ textarea {
 
   .result {
     display: none;
-    position: absolute;
-    text-align: center;
     text-transform: uppercase;
-    z-index: 100;
-    top: 0;
-    right: 0;
-    left: 0;
   }
 
   .result p {
-    font-size: 21vw;
+    font-size: 7vw;
   }
 
-  .answer {
-    text-align: center;
-  }
-
-  #q2 .answer {
-    margin-top: 31rem;
-  }
-
-  #q3 .answer {
-    margin-top: 10rem;
-  }
-
-  #q6 .answer {
-    margin-top: 10rem;
-  }
-
-  #q7 .answer {
-    margin-top: 20rem;
-  }
-
-  #q9 .answer {
-    margin-top: 20rem;
+  .answer p {
+    text-align: left;
   }
 
   .img-answer {

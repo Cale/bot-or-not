@@ -76,7 +76,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q1: "+answer1);
-    $("#q1 .buttons").fadeOut(function() {
+    $("#q1 .buttons, #q1 h1").fadeOut(function() {
       blurImage(response);
     });
   });

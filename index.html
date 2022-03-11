@@ -30,7 +30,7 @@
         <div class="home-about">
           <img src="img/home-about.png" alt="human vs. artificial intelligence">
         </div>
-        <button id="start" class="yellow" text="Test your skill">Test your skill</button>
+        <button id="start" class="yellow start" text="Test your skill">Test your skill</button>
         <p>This challenege is <span>{12}</span> questions and takes about <span>{4}</span> minutes to complete.</p>
     </div>
   </div>
@@ -43,11 +43,17 @@
     <p>1 = A.I. will be humanity's downfall :: A.I. will be humanity's savior = 10</p>
   </div>
   <div id="q1" class="q">
-    <h2>Question 1 of 10</h2>
-    <p>Was this piece of art created by artificial intelligence?</p>
-    <p><img src="img/q1.webp" alt="An impressionist painting of the Eiffel Tower"></p>
-    <div class="buttons"><button class="yellow" answer="true" text="Yes, of course it was!">Yes, of course it was!</button><button class="yellow" answer="false" text="No way">No way</button></div>
-    <div class="answer"><p><a href="https://creator.nightcafe.studio/creation/rMKI9QrHW3sRFbOTK3wu">This piece of artwork</a> was generated using a machine learning process in which A.I. studies reference art and applies that style to a photograph.</p><br><button class="next" text="Next question">Next question</button></div>
+    <div class="grid">
+      <div class="column dark-blue">
+        <p><img src="img/q1.webp" alt="An impressionist painting of the Eiffel Tower"></p>
+        <p>............</p>
+      </div>
+      <div class="column dark-magenta">
+        <h1>Was this piece of art created by artificial intelligence?</h1>
+        <div class="buttons"><button class="yellow" answer="true" text="Yes,&nbsp;of&nbsp;course!">Yes,&nbsp;of&nbsp;course!</button><button class="pink" answer="false" text="No way">No way</button></div>
+      <div class="answer"><div class="result"><p></p></div><p><a href="https://creator.nightcafe.studio/creation/rMKI9QrHW3sRFbOTK3wu" target="_blank">This piece of artwork</a> was generated using a machine learning process in which A.I. studies reference art and applies that style to a photograph.</p><br><button class="next" text="Next&nbsp;question">Next&nbsp;question</button></div>
+      </div>
+    </div>
   </div>
   <div id="q2" class="q">
     <h2>Question 2 of 10</h2>
@@ -115,10 +121,6 @@
     <p>On a scale from 1 to 10, how would you rate artificial intelligence?</p>
     <div class="buttons"><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><button>10</button></div>
     <p>1 = A.I. will be humanity's downfall :: A.I. will be humanity's savior = 10</p>
-  </div>
-
-  <div class="result">
-    <p></p>
   </div>
 
   <div class="score">
