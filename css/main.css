@@ -93,17 +93,20 @@ textarea {
     font-weight: 400;
     margin: 0;
     padding: 0;
+    text-align: center;
+    height: 100vh;
   }
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: 1fr;
-    height: 100vh;
+    height: 100%;
   }
 
   .grid > .column {
     grid-row: 1;
+    padding: 6rem 0;
     min-height: 23rem;
     z-index: 1;
   }
@@ -115,12 +118,17 @@ textarea {
      }
   }
 
+  .center-vert {
+    display: flex;
+    align-items: center
+  }
+
   .dark-blue {
     background-color: #282C49;
   }
 
   .dark-magenta {
-    background-color: #D872DB;
+    background-color: #8A398E;
     background-image: url('../img/texture.png');
     background-repeat: repeat;
     background-size: 10%;
@@ -139,9 +147,22 @@ textarea {
   }
 
   p {
-    font-size: 2rem;
+    color: #EDB872;
+    font-size: 1.5rem;
     margin: 0;
     padding-bottom: 2rem;
+  }
+
+  .home p {
+    display: block;
+    margin: 0 auto;
+    padding-top: 5.5rem;
+    width: 40rem;
+  }
+
+  p span {
+    background-color: #EDB872;
+    color: #8A398E;
   }
 
   .q p {
@@ -165,9 +186,14 @@ textarea {
     background-size: 50%;
   }
 
-  .home-about {
+  .home-about{
     margin: 0 auto;
     max-width: 50rem;
+  }
+
+  .home-about img {
+    margin: 3rem 0;
+    max-width: 25rem;
   }
 
   #nps1, #q2, #q4, #q6, #q8, #q10 {
@@ -185,6 +211,7 @@ textarea {
   .q, .home, .sources, .answer, .score {
     display: none;
     position: relative;
+    height: 100%;
     z-index: 1;
   }
 
