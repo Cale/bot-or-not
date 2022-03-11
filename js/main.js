@@ -38,14 +38,14 @@ function calcNPSDiff() {
 function blurImage(answer) {
   $(".result p").text(answer);
   if (answer == "Incorrect") {
-    $("img").addClass("img-answer");
+    $(".column.dark-blue").addClass("img-answer");
   }
   $(".result").fadeIn();
   $(".answer").fadeIn();
 }
 
 function removeImageBlur() {
-  $("img").removeClass("img-answer");
+  $(".column.dark-blue").removeClass("img-answer");
 }
 
 $( document ).ready(function() {
