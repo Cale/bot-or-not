@@ -342,6 +342,10 @@ textarea {
     padding: 3rem;
   }
 
+  .quote.small {
+    font-size: 2rem;
+  }
+
   .border {
     border: 3px dashed #EDB872;
     margin-bottom: 2rem;
