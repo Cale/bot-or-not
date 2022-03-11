@@ -92,7 +92,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q2: "+answer1);
-    $("#q2 .buttons").fadeOut(function() {
+    $("#q2 .buttons, #q2 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -108,7 +108,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q3: "+answer1);
-    $("#q3 .buttons").fadeOut(function() {
+    $("#q3 .buttons, #q3 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -124,7 +124,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q4: "+answer1);
-    $("#q4 .buttons").fadeOut(function() {
+    $("#q4 .buttons, #q4 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -140,7 +140,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q5: "+answer1);
-    $("#q5 .buttons").fadeOut(function() {
+    $("#q5 .buttons, #q5 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -156,7 +156,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q6: "+answer1);
-    $("#q6 .buttons").fadeOut(function() {
+    $("#q6 .buttons, #q6 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -172,7 +172,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q7: "+answer1);
-    $("#q7 .buttons").fadeOut(function() {
+    $("#q7 .buttons, #q7 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -188,7 +188,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q8: "+answer1);
-    $("#q8 .buttons").fadeOut(function() {
+    $("#q8 .buttons, #q8 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -204,7 +204,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q9: "+answer1);
-    $("#q9 .buttons").fadeOut(function() {
+    $("#q9 .buttons, #q9 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -220,7 +220,7 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q10: "+answer1);
-    $("#q10 .buttons").fadeOut(function() {
+    $("#q10 .buttons, #q10 h1").fadeOut(function() {
       blurImage(response);
     });
   });

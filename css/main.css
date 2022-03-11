@@ -200,6 +200,10 @@ textarea {
     max-width: 85%;
   }
 
+  .q p span {
+    background: none;
+    color: #3D4775;
+  }
   .home h1 {
     display: none;
   }
@@ -328,6 +332,14 @@ textarea {
   .img-answer {
     filter: blur(3px);
     filter: grayscale(1);
+  }
+
+  .quote {
+    border: 3px dashed #EDB872;
+    display: block;
+    font-size: 3.5vw;
+    margin-bottom: 2rem;
+    padding: 3rem;
   }
 
 /* ==========================================================================
