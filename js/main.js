@@ -15,6 +15,10 @@ let answer10;
 let correct = 0;
 let diff;
 
+function calcGridHeight() {
+  $(".grid").css("height", document.documentElement.scrollHeight)
+}
+
 function calcScore() {
   var score = (correct / 10) * 100;
   console.log(score);
@@ -87,11 +91,15 @@ function removeImageBlur() {
 }
 
 $( document ).ready(function() {
-  $('.home').fadeIn();
+  $('.home').fadeIn( function() {
+    calcGridHeight()
+  });
 
   $('#start').click(function() {
     $('.home').fadeOut(function() {
-      $('#nps1').fadeIn();
+      $('#nps1').fadeIn(function() {
+        calcGridHeight()
+      });
     });
   });
 
@@ -99,7 +107,9 @@ $( document ).ready(function() {
     nps1 = $(this).text();
     console.log("nps1: "+nps1);
     $('#nps1').fadeOut(function() {
-      $('#q1').fadeIn();
+      $('#q1').fadeIn(function() {
+        calcGridHeight()
+      });
     });
   });
 
@@ -270,13 +280,17 @@ $( document ).ready(function() {
       displayScore();
       $('.score .quote').html('You scored '+calcScore()+'<sup>%</sup>!');
       $('.score .favorability').html(calcNPSDiff());
-      $('.score').fadeIn();
+      $('.score').fadeIn(function() {
+        calcGridHeight()
+      });
     });
   });
 
   $(".start-over").click(function() {
     $(".score").fadeOut(function() {
-      $('#nps1').fadeIn();
+      $('#nps1').fadeIn(function() {
+        calcGridHeight()
+      });
     });
   });
 
@@ -285,7 +299,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q1").fadeOut(function() {
-      $('#q2').fadeIn();
+      $('#q2').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -294,7 +310,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q2").fadeOut(function() {
-      $('#q3').fadeIn();
+      $('#q3').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -303,7 +321,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q3").fadeOut(function() {
-      $('#q4').fadeIn();
+      $('#q4').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -312,7 +332,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q4").fadeOut(function() {
-      $('#q5').fadeIn();
+      $('#q5').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -321,7 +343,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q5").fadeOut(function() {
-      $('#q6').fadeIn();
+      $('#q6').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -330,7 +354,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q6").fadeOut(function() {
-      $('#q7').fadeIn();
+      $('#q7').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -339,7 +365,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q7").fadeOut(function() {
-      $('#q8').fadeIn();
+      $('#q8').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -348,7 +376,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q8").fadeOut(function() {
-      $('#q9').fadeIn();
+      $('#q9').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -357,7 +387,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q9").fadeOut(function() {
-      $('#q10').fadeIn();
+      $('#q10').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
@@ -366,7 +398,9 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q10").fadeOut(function() {
-      $('#nps2').fadeIn();
+      $('#nps2').fadeIn(function() {
+        calcGridHeight()
+      });
       removeImageBlur();
     });
   });
