@@ -87,12 +87,8 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-  html {
-    height: 100%;
-  }
-
   body {
-    background-color: #fff;
+    background-color: #282C49;
     font-family: source-code-pro, monospace;
     font-weight: 400;
     margin: 0;
@@ -133,6 +129,13 @@ textarea {
 
   .dark-blue {
     background-color: #282C49;
+  }
+
+  .blue {
+    background-color: #415EC9;
+    background-image: url('../img/texture.png');
+    background-repeat: repeat;
+    background-size: 10%;
   }
 
   .dark-magenta {
@@ -350,10 +353,48 @@ textarea {
     font-size: 2rem;
   }
 
+  .score .quote {
+    border: none;
+    font-size: 4rem;
+  }
+
   .border {
     border: 3px dashed #EDB872;
     margin-bottom: 2rem;
     padding: 3rem;
+  }
+
+  .score ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .score ul li {
+    display: inline;
+    list-style-type: none;
+  }
+
+  .score ul li img {
+    border: none;
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    max-width: 8rem;
+    padding: .5rem;
+  }
+
+  .score.q p span {
+    background-color: #D872DB;
+    color: #F4E984;
+  }
+
+  .score .blue p {
+    color: #F4E984;
+    text-align: left;
+  }
+
+  .quote.favorability p {
+    padding-left: 3rem;
   }
 
 /* ==========================================================================

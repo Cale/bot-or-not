@@ -6,33 +6,71 @@ let answer2;
 let answer3;
 let answer4;
 let answer5;
+let answer6;
+let answer7;
+let answer8;
+let answer9;
+let answer10;
 
 let correct = 0;
 let diff;
 
 function calcScore() {
-  var score = (correct / 10) * 100 + "%"
-  console.log((correct / 10) * 100 + "%");
+  var score = (correct / 10) * 100;
+  console.log(score);
   return score;
 }
 
 function calcNPSDiff() {
   var response;
-  response = "Your first NPS was "+nps1+". Your second NPS was "+nps2+"."
-  console.log("Your first NPS was "+nps1+". Your second NPS was "+nps2+".");
+  response = '<p>At the start, you ranked your A.I. favorability as <span>&nbsp;'+nps1+'&nbsp;</span>.</p><p>At the end, you ranked your A.I. favorability as <span>&nbsp;'+nps2+'&nbsp;</span>.</p>'
+  console.log(response);
   if (nps1 > nps2) {
     diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
-    console.log("Your AI favorability has decreased "+diff+"%!");
-    response = response + " Your AI favorability has decreased "+diff+"%!"
+    response = response + '<p class="quote">Your A.I. favorability decreased <span>&nbsp;'+diff+'<sup>%</sup>&nbsp;</span></p>'
+    console.log(response);
   } else if (nps1 < nps2) {
     diff = Math.abs(Math.round(((nps2 - 10) - (nps1 - 10)) / 10 * 100));
-    console.log("Your AI favorability has increased "+diff+"%!");
-    response = response + " Your AI favorability has increased "+diff+"%!"
+    response = response + '<p class="quote">Your A.I. favorability increased <span>&nbsp;'+diff+'<sup>%</sup>&nbsp;</span></p>'
+    console.log(response);
   } else {
-    console.log("Your AI favorability has remained the same.");
-    response = response + "Your AI favorability has remained the same."
+    response = response + '<p class="quote">Your A.I. favorability remained the same.</p>'
+    console.log(response);
   }
   return response;
+}
+
+function displayScore() {
+  if (answer1 == false) {
+    $("#answer1 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer2 == false) {
+    $("#answer2 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer3 == false) {
+    $("#answer3 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer4 == false) {
+    $("#answer4 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer5 == false) {
+    $("#answer5 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer6 == false) {
+    $("#answer6 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer7 == false) {
+    $("#answer7 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer8 == false) {
+    $("#answer8 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer9 == false) {
+    $("#answer9 img").attr("src", "img/pill-incorrect.png")
+  }
+  if (answer10 == false) {
+    $("#answer10 img").attr("src", "img/pill-incorrect.png")
+  }
 }
 
 function blurImage(answer) {
@@ -84,14 +122,14 @@ $( document ).ready(function() {
   $("#q2 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer2 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer2 = false;
       response = "Incorrect"
     }
-    console.log("q2: "+answer1);
+    console.log("q2: "+answer2);
     $("#q2 .buttons, #q2 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -100,14 +138,14 @@ $( document ).ready(function() {
   $("#q3 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer3 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer3 = false;
       response = "Incorrect"
     }
-    console.log("q3: "+answer1);
+    console.log("q3: "+answer3);
     $("#q3 .buttons, #q3 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -116,14 +154,14 @@ $( document ).ready(function() {
   $("#q4 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer4 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer4 = false;
       response = "Incorrect"
     }
-    console.log("q4: "+answer1);
+    console.log("q4: "+answer4);
     $("#q4 .buttons, #q4 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -132,14 +170,14 @@ $( document ).ready(function() {
   $("#q5 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer5 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer5 = false;
       response = "Incorrect"
     }
-    console.log("q5: "+answer1);
+    console.log("q5: "+answer5);
     $("#q5 .buttons, #q5 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -148,14 +186,14 @@ $( document ).ready(function() {
   $("#q6 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer6 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer6 = false;
       response = "Incorrect"
     }
-    console.log("q6: "+answer1);
+    console.log("q6: "+answer6);
     $("#q6 .buttons, #q6 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -164,14 +202,14 @@ $( document ).ready(function() {
   $("#q7 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer7 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer7 = false;
       response = "Incorrect"
     }
-    console.log("q7: "+answer1);
+    console.log("q7: "+answer7);
     $("#q7 .buttons, #q7 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -180,14 +218,14 @@ $( document ).ready(function() {
   $("#q8 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer8 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer8 = false;
       response = "Incorrect"
     }
-    console.log("q8: "+answer1);
+    console.log("q8: "+answer8);
     $("#q8 .buttons, #q8 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -196,14 +234,14 @@ $( document ).ready(function() {
   $("#q9 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer9 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer9 = false;
       response = "Incorrect"
     }
-    console.log("q9: "+answer1);
+    console.log("q9: "+answer9);
     $("#q9 .buttons, #q9 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -212,14 +250,14 @@ $( document ).ready(function() {
   $("#q10 .buttons button").click(function() {
     var response;
     if ($(this).attr("answer") == "true") {
-      answer1 = true;
+      answer10 = true;
       response = "Correct";
       correct++;
     } else {
-      answer1 = false;
+      answer10 = false;
       response = "Incorrect"
     }
-    console.log("q10: "+answer1);
+    console.log("q10: "+answer10);
     $("#q10 .buttons, #q10 h1").fadeOut(function() {
       blurImage(response);
     });
@@ -229,9 +267,16 @@ $( document ).ready(function() {
     nps2 = $(this).text();
     console.log("nps2: "+nps2);
     $('#nps2').fadeOut(function() {
-      $('.score p').text(calcScore());
-      $('.score .favorability').text(calcNPSDiff());
+      displayScore();
+      $('.score .quote').html('You scored '+calcScore()+'<sup>%</sup>!');
+      $('.score .favorability').html(calcNPSDiff());
       $('.score').fadeIn();
+    });
+  });
+
+  $(".start-over").click(function() {
+    $(".score").fadeOut(function() {
+      $('#nps1').fadeIn();
     });
   });
 
