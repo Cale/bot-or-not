@@ -185,7 +185,7 @@ textarea {
     bottom: 0;
   }
 
-  .q, .home, .sources, .answer, .score {
+  .q, .home, .answer, .score {
     display: none;
     position: relative;
     height: 100%;
@@ -234,10 +234,6 @@ textarea {
     max-width: 25rem;
   }
 
-  #nps1, #q2, #q4, #q6, #q8, #q10 {
-    background-color: #fff;
-  }
-
   button {
     background-color: #F4E984;
     border: none;
@@ -250,7 +246,7 @@ textarea {
     text-transform: uppercase;
   }
 
-  button:hover {
+  button:hover, button.pink:hover, button.yellow:hover, button.next:hover, #nps1 .buttons button:hover, #nps2 .buttons button:hover {
     background-color: #000;
     color: #fff;
     cursor: pointer;
@@ -272,7 +268,6 @@ textarea {
   }
 
   button.yellow:hover {
-    background-color: #EDB872;
     color: #fff;
   }
 
@@ -281,17 +276,12 @@ textarea {
     color: #EDB872;
   }
 
-  button.yellow.start {
-    color: #8A398E;
-  }
-
   button.pink {
     background-color: #F7A4FC;
     color: #D872DB;
   }
 
   button.pink:hover {
-    background-color: #D872DB;
     color: #fff;
   }
 
@@ -306,7 +296,6 @@ textarea {
   }
 
   button.next:hover {
-    background-color: #4FB1D3;
     color: #fff;
   }
 
@@ -315,9 +304,22 @@ textarea {
     color: #4FB1D3;
   }
 
-  .buttons {
+  #nps1 .buttons,  #nps2 .buttons {
     padding: 4rem 0 4rem 0;
     text-align: center;
+  }
+
+  #nps1 .buttons button, #nps2 .buttons button {
+    background-color: #D872DB;
+    color: #F7A4FC;
+    margin: 1rem;
+    width: auto;
+  }
+
+  #nps1 .quote.small, #nps2 .quote.small {
+    border-top: none;
+    border-right: none;
+    border-left: none;
   }
 
   #start {
@@ -408,10 +410,14 @@ textarea {
     z-index: 100;
   }
 
-  .footer img {
-    float: right;
+  img.logo {
+    display: inline;
     margin: 2rem;
     width: 5rem;
+    position: fixed;
+    right: 0;
+    bottom: 2rem;
+    z-index: 200;
   }
 
 /* ==========================================================================

@@ -16,8 +16,13 @@ let correct = 0;
 let diff;
 
 function calcGridHeight() {
+  $(".grid").css("height", "auto")
   $(".grid").css("height", document.documentElement.scrollHeight)
 }
+
+window.addEventListener('resize', function(event){
+  calcGridHeight()
+});
 
 function calcScore() {
   var score = (correct / 10) * 100;
@@ -117,7 +122,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer1 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer1 = false;
@@ -133,7 +138,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer2 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer2 = false;
@@ -149,7 +154,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer3 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer3 = false;
@@ -165,7 +170,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer4 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer4 = false;
@@ -181,7 +186,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer5 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer5 = false;
@@ -197,7 +202,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer6 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer6 = false;
@@ -213,7 +218,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer7 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer7 = false;
@@ -229,7 +234,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer8 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer8 = false;
@@ -245,7 +250,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer9 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer9 = false;
@@ -261,7 +266,7 @@ $( document ).ready(function() {
     var response;
     if ($(this).attr("answer") == "true") {
       answer10 = true;
-      response = "Correct";
+      response = "Correct!";
       correct++;
     } else {
       answer10 = false;
@@ -287,11 +292,7 @@ $( document ).ready(function() {
   });
 
   $(".start-over").click(function() {
-    $(".score").fadeOut(function() {
-      $('#nps1').fadeIn(function() {
-        calcGridHeight()
-      });
-    });
+    location.reload();
   });
 
   // Next Buttons
@@ -321,6 +322,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q3").fadeOut(function() {
+      $("#q3 iframe").remove();
       $('#q4').fadeIn(function() {
         calcGridHeight()
       });
@@ -354,6 +356,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q6").fadeOut(function() {
+      $("#q3 iframe").remove();
       $('#q7').fadeIn(function() {
         calcGridHeight()
       });
