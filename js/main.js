@@ -1,3 +1,8 @@
+const synth = window.speechSynthesis;
+let voices = [];
+const praise = ["Nicely done!", "Good job.", "You're good at this.", "Correct!", "Yes!", "Good answer.", "Excellent choice.", "You're a professional.", "Fantastic."];
+const encouragement = ["Keep trying.", "Maybe next time will be better.", "We all make mistakes.", "You'll get this next one for sure.", "That's okay.", "Oh no!", "Don't worry about it."];
+
 let nps1;
 let nps2;
 
@@ -15,6 +20,23 @@ let answer10;
 let correct = 0;
 let diff;
 
+voices = synth.getVoices().sort(function (a, b) {
+  const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
+  if ( aname < bname ) return -1;
+  else if ( aname == bname ) return 0;
+  else return +1;
+});
+
+function speak(text) {
+    var utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.lang = "en-US";
+    utterThis.voice = voices[1];
+    utterThis.pitch = .01;
+    utterThis.rate = 1;
+    console.log(utterThis);
+    synth.speak(utterThis);
+}
+
 function calcGridHeight() {
   $(".grid").css("height", "auto")
   $(".grid").css("height", document.documentElement.scrollHeight)
@@ -26,6 +48,14 @@ window.addEventListener('resize', function(event){
 
 function calcScore() {
   var score = (correct / 10) * 100;
+  speak("You scored "+score+" percent")
+  if ((score >= 60) && (score < 100)) {
+    speak("Not bad!")
+  } else if (score < 60) {
+    speak("Scores are always better on the second try.")
+  } else if (score == 100) {
+    speak("Doesn't get much better than that!")
+  }
   console.log(score);
   return score;
 }
@@ -86,6 +116,11 @@ function blurImage(answer) {
   $(".result p").text(answer);
   if (answer == "Incorrect") {
     $(".column.dark-blue").addClass("img-answer");
+    let text = encouragement[Math.floor(Math.random() * encouragement.length)];
+    speak(text)
+  } else {
+    let text = praise[Math.floor(Math.random() * praise.length)];
+    speak(text)
   }
   $(".result").fadeIn();
   $(".answer").fadeIn();
@@ -98,9 +133,11 @@ function removeImageBlur() {
 $( document ).ready(function() {
   $('.home').fadeIn( function() {
     calcGridHeight()
+    speak("Welcome to Bot or Not!");
   });
 
   $('#start').click(function() {
+    speak("Let's get started.")
     $('.home').fadeOut(function() {
       $('#nps1').fadeIn(function() {
         calcGridHeight()
@@ -129,7 +166,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q1: "+answer1);
-    $("#q1 .buttons, #q1 h1").fadeOut(function() {
+    $("#q1 .buttons").fadeOut();
+    $("#q1 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -145,7 +183,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q2: "+answer2);
-    $("#q2 .buttons, #q2 h1").fadeOut(function() {
+    $("#q2 .buttons").fadeOut();
+    $("#q2 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -161,7 +200,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q3: "+answer3);
-    $("#q3 .buttons, #q3 h1").fadeOut(function() {
+    $("#q3 .buttons").fadeOut();
+    $("#q3 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -177,7 +217,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q4: "+answer4);
-    $("#q4 .buttons, #q4 h1").fadeOut(function() {
+    $("#q4 .buttons").fadeOut();
+    $("#q4 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -193,7 +234,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q5: "+answer5);
-    $("#q5 .buttons, #q5 h1").fadeOut(function() {
+    $("#q5 .buttons").fadeOut();
+    $("#q5 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -209,7 +251,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q6: "+answer6);
-    $("#q6 .buttons, #q6 h1").fadeOut(function() {
+    $("#q6 .buttons").fadeOut();
+    $("#q6 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -225,7 +268,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q7: "+answer7);
-    $("#q7 .buttons, #q7 h1").fadeOut(function() {
+    $("#q7 .buttons").fadeOut();
+    $("#q7 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -241,7 +285,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q8: "+answer8);
-    $("#q8 .buttons, #q8 h1").fadeOut(function() {
+    $("#q8 .buttons").fadeOut();
+    $("#q8 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -257,7 +302,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q9: "+answer9);
-    $("#q9 .buttons, #q9 h1").fadeOut(function() {
+    $("#q9 .buttons").fadeOut();
+    $("#q9 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -273,7 +319,8 @@ $( document ).ready(function() {
       response = "Incorrect"
     }
     console.log("q10: "+answer10);
-    $("#q10 .buttons, #q10 h1").fadeOut(function() {
+    $("#q10 .buttons").fadeOut();
+    $("#q10 h1").fadeOut(function() {
       blurImage(response);
     });
   });
@@ -319,10 +366,10 @@ $( document ).ready(function() {
   });
 
   $("#q3 .next").click(function() {
+    $("#q3 iframe").remove();
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q3").fadeOut(function() {
-      $("#q3 iframe").remove();
       $('#q4').fadeIn(function() {
         calcGridHeight()
       });
@@ -353,10 +400,10 @@ $( document ).ready(function() {
   });
 
   $("#q6 .next").click(function() {
+    $("#q6 iframe").remove();
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q6").fadeOut(function() {
-      $("#q3 iframe").remove();
       $('#q7').fadeIn(function() {
         calcGridHeight()
       });
