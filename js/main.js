@@ -42,6 +42,10 @@ function calcGridHeight() {
   $(".grid").css("height", document.documentElement.scrollHeight)
 }
 
+function scrolltoTop() {
+  window.scrollTo(0, 0);
+}
+
 window.addEventListener('resize', function(event){
   calcGridHeight()
 });
@@ -139,6 +143,7 @@ $( document ).ready(function() {
   $('#start').click(function() {
     speak("Let's get started.")
     $('.home').fadeOut(function() {
+      scrolltoTop()
       $('#nps1').fadeIn(function() {
         calcGridHeight()
       });
@@ -149,6 +154,7 @@ $( document ).ready(function() {
     nps1 = $(this).text();
     console.log("nps1: "+nps1);
     $('#nps1').fadeOut(function() {
+      scrolltoTop()
       $('#q1').fadeIn(function() {
         calcGridHeight()
       });
@@ -329,6 +335,7 @@ $( document ).ready(function() {
     nps2 = $(this).text();
     console.log("nps2: "+nps2);
     $('#nps2').fadeOut(function() {
+      scrolltoTop()
       displayScore();
       $('.score .quote').html('You scored '+calcScore()+'<sup>%</sup>!');
       $('.score .favorability').html(calcNPSDiff());
@@ -347,6 +354,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q1").fadeOut(function() {
+      scrolltoTop()
       $('#q2').fadeIn(function() {
         calcGridHeight()
       });
@@ -358,6 +366,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q2").fadeOut(function() {
+      scrolltoTop()
       $('#q3').fadeIn(function() {
         calcGridHeight()
       });
@@ -370,6 +379,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q3").fadeOut(function() {
+      scrolltoTop()
       $('#q4').fadeIn(function() {
         calcGridHeight()
       });
@@ -381,6 +391,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q4").fadeOut(function() {
+      scrolltoTop()
       $('#q5').fadeIn(function() {
         calcGridHeight()
       });
@@ -392,6 +403,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q5").fadeOut(function() {
+      scrolltoTop()
       $('#q6').fadeIn(function() {
         calcGridHeight()
       });
@@ -404,6 +416,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q6").fadeOut(function() {
+      scrolltoTop()
       $('#q7').fadeIn(function() {
         calcGridHeight()
       });
@@ -415,6 +428,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q7").fadeOut(function() {
+      scrolltoTop()
       $('#q8').fadeIn(function() {
         calcGridHeight()
       });
@@ -426,6 +440,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q8").fadeOut(function() {
+      scrolltoTop()
       $('#q9').fadeIn(function() {
         calcGridHeight()
       });
@@ -437,6 +452,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q9").fadeOut(function() {
+      scrolltoTop()
       $('#q10').fadeIn(function() {
         calcGridHeight()
       });
@@ -448,6 +464,7 @@ $( document ).ready(function() {
     $(".result").fadeOut();
     $(".answer").fadeOut();
     $("#q10").fadeOut(function() {
+      scrolltoTop()
       $('#nps2').fadeIn(function() {
         calcGridHeight()
       });

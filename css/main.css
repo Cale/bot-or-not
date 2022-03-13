@@ -113,8 +113,11 @@ textarea {
   .grid > .column {
     grid-row: 1;
     padding: 6rem 4rem;
-    min-height: 23rem;
     z-index: 1;
+  }
+
+  .home .column {
+    min-height: 12rem;
   }
 
   .center-vert {
@@ -148,10 +151,7 @@ textarea {
   }
 
   .home p {
-    display: block;
-    margin: 0 auto;
     padding-top: 5.5rem;
-    width: 40rem;
   }
 
   p span {
@@ -211,6 +211,7 @@ textarea {
     background: none;
     color: #3D4775;
   }
+
   .home h1 {
     display: none;
   }
@@ -318,6 +319,10 @@ textarea {
     border-top: none;
     border-right: none;
     border-left: none;
+  }
+
+  iframe  {
+    max-width: 100%;
   }
 
   #start {
@@ -463,13 +468,15 @@ textarea {
       font-size: 1.5rem;;
     }
     button {
-      font-size: 2rem;
+      font-size: 1rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     .q button  {
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin: .5rem .5rem !important;
     }
-    .q button[text]::after {
+    button[text]::after {
       display: none;
     }
     #nps1 .q button, #nps2 .q button {
@@ -478,15 +485,18 @@ textarea {
     .score ul li img {
       max-width: 3rem;
     }
-    iframe  {
-      max-width: 18rem;
-    }
     .quote.small {
       font-size: 1.25rem;
     }
     .score .quote {
       font-size: 2rem;
       padding: 0;
+    }
+    img.logo, .footer {
+      display: none;
+    }
+    .home-about img {
+      max-width: 100%;
     }
  }
 
