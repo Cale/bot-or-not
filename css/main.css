@@ -117,13 +117,6 @@ textarea {
     z-index: 1;
   }
 
-  @media screen and (max-width: 992px){
-     .grid {
-        display: block;
-        height: auto;
-     }
-  }
-
   .center-vert {
     display: flex;
     align-items: center
@@ -192,7 +185,12 @@ textarea {
     z-index: 1;
   }
 
-  .q button, .q button[text]::after {
+  .q button {
+    width: 85%;
+    margin: 2rem 0;
+  }
+
+  .q button[text]::after {
     width: 85%;
     margin: 2rem 0;
   }
@@ -419,6 +417,78 @@ textarea {
     bottom: 2rem;
     z-index: 200;
   }
+
+  @media screen and (max-width: 1645px){
+    .q button[text]::after {
+      padding: 1rem 2.5rem;
+      width: 75%;
+    }
+    .q button {
+      font-size: 2rem;
+      margin: 1.5rem .5rem !important;
+    }
+    #nps1 .q button, #nps2 .q button {
+      margin: 1.5rem .5rem !important;
+    }
+    .score ul li img {
+      max-width: 5rem;
+    }
+ }
+
+ @media screen and (max-width: 1110px){
+  button {
+    font-size: 1.5rem;;
+  }
+  .score .quote {
+    font-size: 2rem;
+    padding: 0;
+  }
+  .quote.favorability p {
+    padding-left: 0;
+  }
+  #nps1 .q button, #nps2 .q button {
+    margin: 1.5rem .5rem !important;
+  }
+}
+
+  @media screen and (max-width: 900px){
+    .grid {
+       display: block;
+       height: auto;
+    }
+    .grid > .column {
+      padding: 2rem 2rem;
+    }
+    .q h1 {
+      font-size: 1.5rem;;
+    }
+    button {
+      font-size: 2rem;
+    }
+    .q button  {
+      font-size: 1.5rem;
+      margin: .5rem .5rem !important;
+    }
+    .q button[text]::after {
+      display: none;
+    }
+    #nps1 .q button, #nps2 .q button {
+      margin: 1.5rem .5rem !important;
+    }
+    .score ul li img {
+      max-width: 3rem;
+    }
+    iframe  {
+      max-width: 18rem;
+    }
+    .quote.small {
+      font-size: 1.25rem;
+    }
+    .score .quote {
+      font-size: 2rem;
+      padding: 0;
+    }
+ }
 
 /* ==========================================================================
    Helper classes
